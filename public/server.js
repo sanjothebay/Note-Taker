@@ -7,7 +7,7 @@ var fs = require("fs");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3001;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -16,6 +16,14 @@ app.use(express.json());
 // array for save notes
 // =============================================================
 var notes = [];
+
+
+
+//Ensure that you have at least one HTML page being served at the "/" route. Example:
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/index.html"));
+});
+
 
 // Basic route that sends the user first to the AJAX Page
 
