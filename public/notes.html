@@ -17,8 +17,8 @@
     <a class="navbar-brand" href="/">Note Taker
     </a>
     <div class="icons">
-      <i class="fas fa-save text-light save-note"></i>
-      <i class="fas fa-pen text-light new-note"></i>
+      <i class="fas fa-save text-light save-note btn"></i>
+      <i class="fas fa-pen text-light new-note btn"></i>
     </div>
   </nav>
   <div class="container-fluid">
@@ -38,5 +38,24 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
 </body>
+
+<!-- <script type="text/javascript">
+
+  $( "#submit" ).on( "click", function ( event )
+  {
+    event.preventDefault()
+    console.log( "Working" );
+    var newObject = {};
+    newObject.name = $( "#reserve_name" ).val();
+    newObject.phone = $( "#reserve_phone" ).val();
+    newObject.email = $( "#reserve_email" ).val();
+    newObject.Uid = $( "#reserve_uniqueID" ).val();
+    $.post( "/newReservation", newObject ).then( function ( response )
+    {
+      console.log( response )
+    } );
+
+  } )
+</script> -->
 
 </html>
