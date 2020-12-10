@@ -23,6 +23,20 @@ app.get("/notes", function (req, res) {
     res.sendFile(path.join(__dirname, "index.html"));
   });
 
+// Basic API routes that sends the user first to the db.json
+
+app.get("/api/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "db.json"));
+  });
+
+  app.post("/api/notes", function (req, res) {
+    res.sendFile(path.join(__dirname, "db.json"));
+  });
+
+  /// Basic API routes that sends the user  to the db.json DELETE 
+  app.delete("/api/notes/:id", function (req, res) {
+    res.sendFile(path.join(__dirname, "db.json"));
+  });
 
 
 // listening to the port and consollogging if it works 
