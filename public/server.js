@@ -20,9 +20,9 @@ var notes = [];
 
 
 //Ensure that you have at least one HTML page being served at the "/" route. Example:
-app.get("/", function(req, res) {
-  res.json(path.join(__dirname, "public/index.html"));
-});
+//app.get("/", function(req, res) {
+  //res.json(path.join(__dirname, "public/index.html"));
+//});
 
 
 // Basic route that sends the user first to the AJAX Page
