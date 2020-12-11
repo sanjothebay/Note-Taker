@@ -38,20 +38,20 @@ app.get("*", function (req, res) {
 // Basic API routes that sends the user first to the db.json
 
 app.get("/api/notes", function (req, res) {
-  res.sendFile(path.join(__dirname, "db.json"));
+  res.json(path.join(__dirname, "db.json"));
 });
 
 app.post("/api/notes", function (req, res) {
-  res.sendFile(path.join(__dirname, "db.json"));
+  res.json(path.join(__dirname, "db.json"));
   var newObject = req.body;
   reservations.push(newObject);
-  console.log(reservations);
+  console.log(newObject);
   res.json(newObject);
 });
 
 /// Basic API routes that sends the user  to the db.json DELETE
 app.delete("/api/notes/:id", function (req, res) {
-  res.sendFile(path.join(__dirname, "db.json"));
+  res.json(path.join(__dirname, "db.json"));
 });
 
 // listening to the port and consollogging if it works
