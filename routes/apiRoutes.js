@@ -12,14 +12,16 @@ module.exports = function (app) {
 
   app.post("/api/notes", function (req, res) {
     res.json(path.join(__dirname, "db.json"));
-    var newObject = req.body;
-    notes.push(newObject);
+    notes.push(req.body);
     console.log(notes);
-    res.json(newObject);
+    res.json(req.body);
   });
 
   /// Basic API routes that sends the user  to the db.json DELETE
   app.delete("/api/notes/:id", function (req, res) {
     res.json(path.join(__dirname, "db.json"));
+    // noteInputText.length = 0;
+    // noteInputTitleText = 0;    
+    // res.json({ ok: true });
   });
 };
