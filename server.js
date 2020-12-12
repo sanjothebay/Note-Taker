@@ -44,8 +44,8 @@ app.get("/api/notes", function (req, res) {
 app.post("/api/notes", function (req, res) {
   res.json(path.join(__dirname, "db.json"));
   var newObject = req.body;
-  reservations.push(newObject);
-  console.log(newObject);
+  notes.push(newObject);
+  console.log(notes);
   res.json(newObject);
 });
 
