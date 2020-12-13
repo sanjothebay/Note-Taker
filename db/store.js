@@ -15,6 +15,15 @@ class StoringMethodes {
     writtingFuction(data){
         return writeFileAsync("../db/db.json", JSON.stringify(data));
     }
+    gettingNotesFunction(){
+        return writeFileAsync("../db/db.json", JSON.parse(data));
+    }
+    addingNotesFucntion(){
+        return writeFileAsync("../db/db.json", JSON.push(data));
+    }
+    removingNotesFunction(){
+        return deleteFileAsync("../db/db.json", JSON.delete(id));
+    }
 }
 
 module.exports = new StoringMethodes();
