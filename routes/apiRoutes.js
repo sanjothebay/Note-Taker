@@ -1,9 +1,6 @@
-var path = require("path");
-var fs = require("fs");
+//var path = require("path");
+//var fs = require("fs");
 var StoringMethodes = require("../db/store.js");
-
-var title = [];
-var notes = [];
 
 module.exports = function (app) {
   // Basic API routes that sends the user first to the db.json
@@ -15,13 +12,13 @@ module.exports = function (app) {
   });
 
   app.post("/api/notes", function (req, res) {
-    addingNotesFucntion.readFunction()
+    StoringMethodes.addingNotesFucntion(req.body)
     .then((readnotes) => res.json(readnotes))
   });
 
   /// Basic API routes that sends the user  to the db.json DELETE
   app.delete("/api/notes/:id", function (req, res) {
-    removingNotesFunction()
-    .then((readnotes) => res.json(readnotes))
+    StoringMethodes.removingNotesFunction(req, res)
+    .then((readnotes) => res.json({ok:true})) // status 200 is default
   });
 };

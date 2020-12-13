@@ -8,6 +8,7 @@ const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
 
 var readingFileFromAsync = readFileAsync("../db/db.json", "utf8");
+
 class StoringMethodes {
     readFunction(){
     return readFileAsync("../db/db.json", "utf8");
@@ -16,13 +17,13 @@ class StoringMethodes {
         return writeFileAsync("../db/db.json", JSON.stringify(data));
     }
     gettingNotesFunction(){
-        return writeFileAsync("../db/db.json", JSON.parse(data));
+        return uuidv1.FileAsync("../db/db.json", JSON.parse(data));
     }
-    addingNotesFucntion(){
+    addingNotesFucntion(data){
         return fs.writeFile("../db/db.json", JSON.push(data));
     }
-    removingNotesFunction(){
-        return deleteFileAsync("../db/db.json", JSON.delete(id));
+    removingNotesFunction(id){
+        return util.FileAsync("../db/db.json", JSON.delete(id));
     }
 }
 
