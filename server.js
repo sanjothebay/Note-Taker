@@ -2,7 +2,8 @@
 // =============================================================
 var express = require("express");
 var path = require("path");
-var fs = require("fs");
+const util = require("util");
+
 
 // Sets up the Express App
 // =============================================================
@@ -13,14 +14,16 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
+//app.use("/api", apiRoutes);
+//app.use("/", htmlRoutes);
 
 // ROUTER
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 // ================================================================================
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+const htmlRoutes = require("./routes/htmlRoutes")(app);
+const apiRoutes = require("./routes/apiRoutes")(app);
 
 // =============================================================================
 // LISTENER
