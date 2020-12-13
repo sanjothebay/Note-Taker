@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const util = require("util");
-//const uuidv1 = require("uuidv1");
+const uuidv1 = require("uuidv1");
 const {promisify} = require('util');
 const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
@@ -19,7 +19,7 @@ class StoringMethodes {
         return writeFileAsync("../db/db.json", JSON.parse(data));
     }
     addingNotesFucntion(){
-        return writeFileAsync("../db/db.json", JSON.push(data));
+        return fs.writeFile("../db/db.json", JSON.push(data));
     }
     removingNotesFunction(){
         return deleteFileAsync("../db/db.json", JSON.delete(id));
