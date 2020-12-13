@@ -4,7 +4,6 @@ var StoringMethodes = require("../db/store.js");
 
 module.exports = function (app) {
   // Basic API routes that sends the user first to the db.json
-
   app.get("/api/notes", function (req, res) {
     StoringMethodes.readFunction().then((readnotes) => res.json(readnotes));
   });
@@ -14,7 +13,6 @@ module.exports = function (app) {
       res.json(readnotes)
     );
   });
-
   /// Basic API routes that sends the user  to the db.json DELETE
   app.delete("/api/notes/:id", function (req, res) {
     StoringMethodes.removingNotesFunction(req.params.id).then(() =>

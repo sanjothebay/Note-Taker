@@ -2,7 +2,7 @@
 var express = require("express");
 //var path = require("path");
 //const util = require("util");
-
+// =============================================================================
 // Sets up the Express App
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -19,8 +19,7 @@ app.use(express.static(__dirname + "/public"));
 const htmlRoutes = require("./routes/htmlRoutes")(app);
 const apiRoutes = require("./routes/apiRoutes")(app);
 // LISTENER
-// The below code effectively "starts" our server
-// listening to the port and consollogging if it works
+// The below code effectively "starts" our server listening to the port and consollogging if it works
 app.listen(PORT, function () {
   console.log("App listening on PORT " + PORT);
 });

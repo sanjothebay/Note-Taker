@@ -14,14 +14,14 @@ class StoringMethodes {
   readFunction() {
     return readFileAsync("../db/db.json", "utf8");
   }
-  writtingFuction(data) {
-    return writeFileAsync("../db/db.json", JSON.stringify(data));
+  writtingFuction(dataNote) {
+    return writeFileAsync("../db/db.json", JSON.stringify(dataNote));
   }
   gettingNotesFunction() {
-    return uuidv1.FileAsync("../db/db.json", JSON.parse(data));
+    return uuidv1.FileAsync("../db/db.json", JSON.parse(dataNote));
   }
-  addingNotesFucntion(data) {
-    return fs.writeFile("../db/db.json", JSON.push(data));
+  addingNotesFucntion(dataNote) {
+    return fs.writeFile("../db/db.json", JSON.push(dataNote));
   }
   removingNotesFunction(id) {
     return util.FileAsync("../db/db.json", JSON.delete(id));
