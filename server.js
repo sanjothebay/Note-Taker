@@ -1,8 +1,8 @@
 // Dependencies
 // =============================================================
 var express = require("express");
-//var path = require("path");
-//var fs = require("fs");
+var path = require("path");
+var fs = require("fs");
 
 // Sets up the Express App
 // =============================================================
@@ -13,11 +13,6 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
-
-// array for save notes
-// =============================================================
-var notes = [];
-
 
 // ROUTER
 // The below points our server to a series of "route" files.

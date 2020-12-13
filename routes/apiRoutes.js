@@ -3,8 +3,6 @@ var path = require("path");
 var title = [];
 var notes = [];
 
-
-
 module.exports = function (app) {
   // Basic API routes that sends the user first to the db.json
 
@@ -24,7 +22,6 @@ module.exports = function (app) {
     res.json(path.join(__dirname, "db.json"));
     title.delete(req.body);
     notes.delete(req.body);
- 
     res.json(req.body);
   });
 };
