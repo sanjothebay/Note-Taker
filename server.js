@@ -10,14 +10,14 @@ var PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
+//app.use("/api", apiRoutes);
+//app.use("/", htmlRoutes);
 // =============================================================================
 // ROUTER
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-const htmlRoutes = require("./routes/htmlRoutes")(app);
-const apiRoutes = require("./routes/apiRoutes")(app);
+htmlRoutes = require("./routes/htmlRoutes")(app);
+apiRoutes = require("./routes/apiRoutes")(app);
 // LISTENER
 // The below code effectively "starts" our server listening to the port and consollogging if it works
 app.listen(PORT, function () {
