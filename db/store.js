@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const util = require("util");
-const uuidv1 = require("uuidv1");
+const uuidv1 = require("uuid/v1");
 const { promisify } = require("util");
 const readFileAsync = promisify(fs.readFile);
 const writeFileAsync = promisify(fs.writeFile);
