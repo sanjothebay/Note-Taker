@@ -25,19 +25,19 @@ class StoringMethodes {
     });
   }
   gettingNotesFunction() {
-    return uuidv1.FileAsync("db/db.json", JSON.parse(dataNote))
+    return FileAsync("db/db.json", JSON.parse(dataNote))
     .catch((err) => {
       console.log('ERROR:', err);
   });
   }
   addingNotesFucntion(dataNote) {
-    return fs.writeFile("db/db.json", JSON.push(dataNote))
+    return writeFile("db/db.json", JSON.push(dataNote))
    .catch((err) => {
      console.log('ERROR:', err);
   });
   }
   removingNotesFunction(id) {
-    return util.FileAsync("db/db.json", JSON.delete(id))
+    return FileAsync("db/db.json", JSON.delete(id))
    .catch((err) => {
      console.log('ERROR:', err);
   });
