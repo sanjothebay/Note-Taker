@@ -5,7 +5,7 @@ var StoringMethodes = require("../db/store");
 module.exports = function (app) {
   // Basic API routes that sends the user first to the db.json
   app.get("/api/notes", function (req, res) {
-    StoringMethodes.readFunction()
+    StoringMethodes.parseNotesFuction()
     .then((readnotes) => res.json(readnotes));
   });
 
